@@ -10,59 +10,65 @@
     box-sizing: border-box;
 }
 body{
+    display: flex;
+    flex-direction: column;
     height: 100vh;
+}
+.code-wrapper{
+    flex: 1;
+    height: 50%;
+    padding: 10px;
+}
+.preview-wrapper{
+    flex: 1;
+    height: 50%;
+}
+#code{
+    overflow: hidden;
+    height: 100%;
+}
+/*下面是code的内容代码 也是css*/
+/*
+.preview{
+    height: 100%;
+    border: 1px solid bule;
     display: flex;
     justify-content: center;
     align-items: center;
     background: #fee433;
-    
-  }
-  .wrapper{
+}
+
+.wrapper{
     width: 100%;
     height: 218px;
     position: relative;
-  }
-  .nose{
-      position: absolute;
-      border: 11px solid transparent;
-      border-top-color: black;
-    
-      /*width: 22px;
-      height: 22px;*/
-      border-radius: 50%;
-      left: 50%;
-      top: 28px;
-      margin-left: -11px;
-  }
-  .eye{
+}
+.nose{
+    position: absolute;
+    border: 11px solid transparent;
+    border-top-color: black;
+
+    /**width: 22px;  height: 22px;**/
+/*
+    border-radius: 50%;
+    left: 50%;
+    top: 28px;
+    margin-left: -11px;
+}
+.eye{
     width: 49px;
     height: 49px;
     border-radius: 50%;
     background: #2e2e2e;
     position: absolute;
     border: 2px solid black;
-    
-  }
-  .eye.left{
+
+}
+.eye.left{
     right: 50%;
     margin-right: 90px;
-  }
-  .eye.left::after{
-      content: '';
-      display: block;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: white;
-      position: absolute;
-      left: 5px;
-      top: 3px;
-  }
-  .eye.right{
-    left: 50%;
-    margin-left: 90px;
-  }
-  .eye.right::after{
+}
+.eye.left::after{
     content: '';
     display: block;
     width: 24px;
@@ -72,21 +78,36 @@ body{
     position: absolute;
     left: 5px;
     top: 3px;
-  }
-  .face{
-      width: 68px;
-      height: 68px;
-      border-radius: 50%;
-      background: #fc0d1c;
-      position: absolute;
-      border: 2px solid black;
-  }
-  .face.left{
-      right: 50%;
-      top: 85px;
-      margin-right: 116px;
-  }
-  .face.right{
+}
+.eye.right{
+    left: 50%;
+    margin-left: 90px;
+}
+.eye.right::after{
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    left: 5px;
+    top: 3px;
+}
+.face{
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: #fc0d1c;
+    position: absolute;
+    border: 2px solid black;
+}
+.face.left{
+    right: 50%;
+    top: 85px;
+    margin-right: 116px;
+}
+.face.right{
     left: 50%;
     top: 85px;
     margin-left: 116px;
@@ -122,7 +143,9 @@ body{
     left: 50%;
     margin-left: -150px;
     overflow: hidden;
-    z-index: -1;
+    /*z-index: -1；*/
+    /*css中  后面元素会压着前面元素 z-index要高*/
+/*
 }
 .lowerLip{
     position: absolute;
@@ -144,5 +167,4 @@ body{
     background: #fc4a62;
     margin-left: 50px;
     border-radius: 50%;
-    z-index: 1;
-}
+}*/
