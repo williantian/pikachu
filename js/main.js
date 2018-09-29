@@ -1,20 +1,40 @@
 !function () {
+    var duration = 100
     function writeCode(code, fn) {
         let container = document.querySelector('#code')
         let styleTag = document.querySelector('#styleTag')
         let n = 0
-        let id = setInterval(() => {
+        setTimeout(function run(){
             n += 1
             container.innerHTML = code.substring(0, n)
             styleTag.innerHTML = code.substring(0, n)
             container.scrollTop = container.scrollHeight
             /*没有起作用？*/
-            if (n > code.length) {
-                window.clearInterval(id)
+            if (n < code.length) {
+               setTimeout(run, duration)
+            }else{
                 fn && fn.call()
             }
         }, 10)
     }
+
+    $('.actions').on('click', 'button', function(e){
+        let $button = $(e.currentTarget)
+        let speed = $button.attr('data-speed')
+        $button.addClass('active').siblings('.active').removeClass('active')
+        switch(speed){
+            case 'slow': 
+              duration = 100
+              break
+            case 'normal': 
+              duration = 50
+              break
+            case 'fast': 
+              duration = 10
+              break
+
+        }
+    })
 
 let code = `
 /*首先准备皮卡丘的皮肤颜色*/
@@ -162,4 +182,6 @@ let code = `
 /*好了  这个皮卡丘送给你*/
 `
     writeCode(code)
+
 }.call()
+

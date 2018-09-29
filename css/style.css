@@ -27,6 +27,25 @@ body{
     overflow: hidden;
     height: 100%;
 }
+.actions{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+}
+.actions > button{
+    margin: 10px;
+    background: #dddddd;
+    padding: 8px 10px;
+    border: none;
+}
+.actions > button.active{
+    box-shadow: 1px 1px 2px rgb(0,0,0,0.8)
+}
+.actions > button:focus{
+    outline: none;
+}
 /*下面是code的内容代码 也是css*/
 /*
 .preview{
